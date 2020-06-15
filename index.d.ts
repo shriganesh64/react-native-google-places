@@ -528,6 +528,8 @@ declare module "react-native-google-places" {
   }
 
   class RNGooglePlacesNative {
+    public provideAPIKey(key: string): void;
+    
     public openAutocompleteModal<K extends keyof GMSTypes.Place>(
       autocompleteFilter: RNGooglePlacesNativeOptions, placeFields: K[],
     ): Promise<Promise<Pick<GMSTypes.Place, (typeof placeFields)[number]>>>;
@@ -569,6 +571,11 @@ declare module "react-native-google-places" {
     };
 
     static placeFieldsDefaults: (keyof GMSTypes.Place)[];
+
+    /**
+     * Sets the google places api key
+     */
+    public provideAPIKey(placeID: string): void;
 
     /**
      * Note: To prevent yourself from incurring huge usage bill, you should

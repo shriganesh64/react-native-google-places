@@ -28,6 +28,10 @@ class RNGooglePlaces {
 
 	static placeFieldsDefaults = []
 
+	provideAPIKey(key) {
+		RNGooglePlacesNative.provideAPIKey(key)
+	}
+
 	openAutocompleteModal(options = {}, placeFields = []) {
 		return RNGooglePlacesNative.openAutocompleteModal({
 			...RNGooglePlaces.optionsDefaults,

@@ -65,6 +65,9 @@ RCT_EXTERN_METHOD(cancelAutocompleteSession);
     self.sessionToken = nil;
 }
 
+RCT_EXPORT_METHOD(provideAPIKey: (NSString *)key) {
+    [GMSPlacesClient provideAPIKey:key];
+}
 
 RCT_EXPORT_METHOD(openAutocompleteModal: (NSDictionary *)options
                   withFields: (NSArray *)fields
